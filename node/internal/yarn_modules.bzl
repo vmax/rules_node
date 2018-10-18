@@ -66,7 +66,7 @@ def _yarn_modules_impl(ctx):
     install_path.append("$PATH")
     
     # Build node_modules via 'yarn install'
-    execute(ctx, [node, yarn_js, "install"], quiet = True, environment = {
+    execute(ctx, [node, yarn_js, "install", "--force"], quiet = True, environment = {
         "PATH": ":".join(install_path),
     })
 
